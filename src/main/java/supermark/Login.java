@@ -1,9 +1,10 @@
-package supermark;
+package supermark.code;
 
 public class Login extends Usuario {
-	private Usuario nombreUsuario; 
-	private Usuario contrasenia;
-	private Usuario email;
 	
+	
+	public Login (String contrasenia, String nombreUsuario, long email) {
+		super(contrasenia, nombreUsuario, email); 
+	}
 	
 }

@@ -1,13 +1,42 @@
-package supermark;
+package supermark.code;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 public class Domicilio {
 	private String calle; 
-	private int altura; 
+	private Integer altura; 
 	private String barrio; 
 	private String localidad; 
 	private String tipoCasa;
 	
 	
+	public Domicilio (Domicilio domicilio) {
+		this.calle = domicilio.calle; 
+		this.altura = domicilio.altura; 
+		this.barrio = domicilio.barrio; 
+		this.localidad = domicilio.localidad;
+		this.tipoCasa = domicilio.tipoCasa; 
+			
+	}
+	
+	public Domicilio (String localidad, String barrio, String calle, Integer altura, String tipoCasa) {
+		this.localidad = localidad; 
+		this.barrio = barrio;
+		this.calle = calle; 
+		this.altura = altura; 
+		this.tipoCasa = tipoCasa; 
+	}
+	
+	public void Domicilio (String calle, Integer altura) {
+		get(calle, altura); 
+	}
+	
+	private void get(String calle2, Integer altura2) {
+	}
+
 	public String getCalle() {
 		return calle;
 	}
@@ -38,6 +67,5 @@ public class Domicilio {
 	public void setTipoCasa(String tipoCasa) {
 		this.tipoCasa = tipoCasa;
 	} 
-
 	
 }

@@ -1,13 +1,25 @@
-package supermark;
+package supermark.code;
 
 public class Producto {
 	private String nombre; 
 	private String tipo; 
-	private int stock; 
-	private long id; 
+	private Integer stock; 
+	private Integer id; 
 	private String marca; 
-	private double precio;
+	private Double precio;
 	
+	public Producto () {
+		
+	}
+	
+	public Producto (String nombre, String tipo, Integer stock, Integer id, String marca, Double precio) {
+		this.nombre = nombre; 
+		this.tipo = tipo; 
+		this.stock = stock; 
+		this.id = id; 
+		this.marca = marca; 
+		this.precio = precio; 
+	}
 	
 	public String getNombre() {
 		return nombre;
@@ -21,16 +33,16 @@ public class Producto {
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
-	public int getStock() {
+	public Integer getStock() {
 		return stock;
 	}
-	public void setStock(int stock) {
+	public void setStock(Integer stock) {
 		this.stock = stock;
 	}
-	public long getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public String getMarca() {
@@ -45,7 +57,5 @@ public class Producto {
 	public void setPrecio(double precio) {
 		this.precio = precio;
 	} 
-//aca registrariamos el stock? 
-	
 }
  

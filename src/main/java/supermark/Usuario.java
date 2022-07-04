@@ -1,29 +1,48 @@
-package supermark;
+package supermark.code;
+
+import java.util.ArrayList;
+import java.util.Date;
 
 public class Usuario {
 	private String nombre; 
-	private String apellido; 
-	private long dni; 
-	private Domicilio domicilio;
+	private String apellido1;  
+	private String apellido2;
+	private long dni;
+	private Date fechaNac; 
 	private String nombreUsuario; 
 	private long email;
 	private String contrasenia; 
-	private String tipoUsuario; 
-	
-	
-	public Usuario(String nom,String ape) {
-		nombre=nom;
-		apellido=  ape;
-	}
-	
-	public double getGastoAcumulado() {
-		return gastoAcumulado;
-	}
+	private String tipoUsuario;
+	private Domicilio domicilio; 
 
-	public void setGastoAcumulado(double gastoAcumulado) {
-		this.gastoAcumulado = gastoAcumulado;
+	public Usuario () {
+		
 	}
-	private double gastoAcumulado; 
+	
+	public Usuario(Usuario usuario) {
+		
+	}
+	
+	
+	
+	public Usuario (String nombre, String apellido1, String apellido2, long dni, String calle, Integer altura) { 
+		this.nombre = nombre; 
+		this.apellido1 = apellido1; 
+		this.apellido2 = apellido2; 
+		this.dni = dni;
+	}
+	
+
+	public Usuario (String contrasenia, String nombreUsuario, long email) {
+		this.nombreUsuario = nombreUsuario;
+		this.contrasenia = contrasenia; 
+		this.email = email; 
+	}
+	
+	public void DomicilioUsuario (String calle, Integer altura) {
+		
+	}
+	
 	
 	public String getTipoUsuario() {
 		return tipoUsuario;
@@ -41,9 +60,6 @@ public class Usuario {
 		this.contrasenia = contrasenia;
 	}
 
-	public Usuario () {
-		
-	}
 	
 	public String getNombre() {
 		return nombre;
@@ -51,25 +67,25 @@ public class Usuario {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public String getApellido() {
-		return apellido;
+	public String getApellido1() {
+		return apellido1;
 	}
-	public void setApellido(String apellido) {
-		this.apellido = apellido;
+	public void setApellido1(String apellido1) {
+		this.apellido1 = apellido1;
 	}
-	
+	public String getApellido2() {
+		return apellido2;
+	}
+	public void setApellido2(String apellido2) {
+		this.apellido2 = apellido2;
+	}
 	public long getDni() {
 		return dni;
 	}
 	public void setDni(long dni) {
 		this.dni = dni;
 	}
-	public Domicilio getDomicilio() {
-		return domicilio;
-	}
-	public void setDomicilio(Domicilio domicilio) {
-		this.domicilio = domicilio;
-	}
+	
 	public String getNombreUsuario() {
 		return nombreUsuario;
 	}
@@ -83,6 +99,24 @@ public class Usuario {
 		this.email = email;
 	}
 	
-	
+	public void setDireccion(String string) {
+		
+	}
 
+	public Domicilio getDomicilio() {
+		return domicilio;
+	}
+
+	public void setDomicilio(Domicilio domicilio) {
+		this.domicilio = domicilio;
+	}
+
+	public Date getFechaNac() {
+		return fechaNac;
+	}
+
+	public void setFechaNac(Date fechaNac) {
+		this.fechaNac = fechaNac;
+	}
+	 
 }

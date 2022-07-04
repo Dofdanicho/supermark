@@ -1,9 +1,13 @@
-package supermark;
+package supermark.code;
+
+//import java.sql.Date; 
 
 public class Tarjeta {
 	private Integer nroTarjeta; 
 	private Integer fechaVenc; //consultar
 	private String nombreDeTarjeta;
+	private Integer codSeguridad; 
+	
 	
 	
 	public Integer getNroTarjeta() {
@@ -23,8 +27,15 @@ public class Tarjeta {
 	}
 	public void setNombreDeTarjeta(String nombreDeTarjeta) {
 		this.nombreDeTarjeta = nombreDeTarjeta;
+	}
+	public Integer getCodSeguridad() {
+		return codSeguridad;
+	}
+	public void setCodSeguridad(Integer codSeguridad) {
+		this.codSeguridad = codSeguridad;
 	} 
 
-	//import java.sql.Date; 
+	
+	
 	
 }
