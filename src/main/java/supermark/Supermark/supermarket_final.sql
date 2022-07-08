@@ -1,8 +1,6 @@
 CREATE DATABASE supermarket DEFAULT CHAR SET utf8mb4;
 USE supermarket; 
 
--- DROP TABLE IF EXISTS domicilio; 
-
 CREATE TABLE domicilio (
   id_domicilio int NOT NULL AUTO_INCREMENT PRIMARY KEY,
   Localidad varchar(20) NOT NULL DEFAULT '',
@@ -11,9 +9,7 @@ CREATE TABLE domicilio (
   Calle VARCHAR(20) NOT NULL DEFAULT '', 
   Altura int NOT NULL DEFAULT '0'
  ); 
- 
--- DROP TABLE tipoCasa; 
- 
+
  CREATE TABLE tipoCasa (
  id_casa INT NOT NULL AUTO_INCREMENT PRIMARY KEY, 
  tCasa VARCHAR (20) NOT NULL DEFAULT 'Casa', 
@@ -23,9 +19,6 @@ CREATE TABLE domicilio (
  CONSTRAINT domicilio_fk
  FOREIGN KEY (id_domicilio) REFERENCES domicilio(id_domicilio)
 ); 
-
-DROP TABLE IF EXISTS Usuario; 
-
 
 CREATE TABLE Usuario (
 id_usuario INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -39,13 +32,6 @@ tipoUsuario enum('Cliente', 'Cliente regular','Administrador') NOT NULL DEFAULT 
 id_domicilio INT NOT NULL,
 FOREIGN KEY (id_domicilio) REFERENCES domicilio (id_domicilio)
 );
-
-/*PRIMARY KEY (`ID`),
-  KEY `CountryCode` (`CountryCode`),
-  CONSTRAINT `city_ibfk_1` FOREIGN KEY (`CountryCode`) REFERENCES `country` (`Code`)
-
-FOREIGN KEY Usuario(id_domicilio) 
-REFERENCES domicilio(ID)*/
 
 CREATE TABLE Registrarse(
 id_registrarse INT NOT NULL AUTO_INCREMENT PRIMARY KEY, 
