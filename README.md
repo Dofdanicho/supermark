@@ -25,3 +25,7 @@ Se debe desarrollar los siguientes subsistemas:
 - Ver todos los usuarios que realizaron una compra 
 - Ver listado de productos seleccionados por el usuario 
 
+
+DER de la solucion propuesta: 
+
+![supermark_DERR](https://user-images.githubusercontent.com/107336228/177912287-060b07cd-ae9f-4d02-836b-6943c0be1f4f.png)
