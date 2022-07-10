@@ -1,29 +1,71 @@
-package supermark;
+package supermark_code;
+
+import java.util.Date;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.text.MessageFormat;
+
+import supermark.Credenciales;
 
 public class Usuario {
-	private String nombre; 
-	private String apellido; 
-	private long dni; 
-	private Domicilio domicilio;
+	private String nombre;
+	private String apellido1;  
+	private String apellido2;
+	private static String dni;
+	private Date fechaNac; 
 	private String nombreUsuario; 
-	private long email;
+	private String email;
 	private String contrasenia; 
-	private String tipoUsuario; 
+	private String tipoUsuario;
+	private Domicilio id_domicilio; 
 	
+	//Constructores
+	public Usuario () {
+			
+		}
 	
-	public Usuario(String nom,String ape) {
-		nombre=nom;
-		apellido=  ape;
+	//Constructor de copia
+	public Usuario(Usuario Usuarios) {
+		this.nombre = Usuarios.nombre;
+		this.apellido1 = Usuarios.apellido1;
 	}
 	
-	public double getGastoAcumulado() {
-		return gastoAcumulado;
+	//Constrcutor Normal
+	public Usuario(String nombre,String apellido){
+		this.nombre = nombre;
+		this.apellido1 = apellido;
 	}
 
-	public void setGastoAcumulado(double gastoAcumulado) {
-		this.gastoAcumulado = gastoAcumulado;
+	
+	
+	public Usuario (String nombre, String apellido1, String apellido2, String dni, Date fechaNAc, String nombreUsuario, String email, String contrasenia, String tipoUsuario, Domicilio id_domicilio) { 
+		super();
+		this.nombre = nombre; 
+		this.apellido1 = apellido1; 
+		this.apellido2 = apellido2; 
+		Usuario.dni = dni;
+		this.fechaNac = fechaNac; 
+		this.nombreUsuario = nombreUsuario;
+		this.email = email; 
+		this.contrasenia = contrasenia; 
+		this.tipoUsuario = tipoUsuario; 
+		this.id_domicilio = id_domicilio;
+		
 	}
-	private double gastoAcumulado; 
+	
+
+	public Usuario (String contrasenia, String nombreUsuario, String email) {
+		this.nombreUsuario = nombreUsuario;
+		this.contrasenia = contrasenia; 
+		this.email = email; 
+	}
+	
+	public void DomicilioUsuario (String calle, Integer altura) {
+		
+	}
+	
 	
 	public String getTipoUsuario() {
 		return tipoUsuario;
@@ -41,9 +83,6 @@ public class Usuario {
 		this.contrasenia = contrasenia;
 	}
 
-	public Usuario () {
-		
-	}
 	
 	public String getNombre() {
 		return nombre;
@@ -51,38 +90,61 @@ public class Usuario {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public String getApellido() {
-		return apellido;
+	public String getApellido1() {
+		return apellido1;
 	}
-	public void setApellido(String apellido) {
-		this.apellido = apellido;
+	public void setApellido1(String apellido1) {
+		this.apellido1 = apellido1;
 	}
-	
-	public long getDni() {
+	public String getApellido2() {
+		return apellido2;
+	}
+	public void setApellido2(String apellido2) {
+		this.apellido2 = apellido2;
+	}
+	public String getDni() {
 		return dni;
 	}
-	public void setDni(long dni) {
-		this.dni = dni;
+	public void setDni(String dni) {
+		Usuario.dni = dni;
 	}
-	public Domicilio getDomicilio() {
-		return domicilio;
-	}
-	public void setDomicilio(Domicilio domicilio) {
-		this.domicilio = domicilio;
-	}
+	
 	public String getNombreUsuario() {
 		return nombreUsuario;
 	}
 	public void setNombreUsuario(String nombreUsuario) {
 		this.nombreUsuario = nombreUsuario;
 	}
-	public long getEmail() {
+	public String getEmail() {
 		return email;
 	}
-	public void setEmail(long email) {
+	public void setEmail(String email) {
 		this.email = email;
 	}
 	
-	
+	public void setDireccion(String string) {
+		
+	}
 
+	public Domicilio getDomicilio() {
+		return id_domicilio;
+	}
+
+	public void setDomicilio(Domicilio domicilio) {
+		this.id_domicilio = domicilio;
+	}
+
+	public Date getFechaNac() {
+		return fechaNac;
+	}
+
+	public void setFechaNac(Date fechaNac) {
+		this.fechaNac = fechaNac;
+	}
+	
+	public static void nuevoUsuario() {
+		//  Registrar JDBC Driver
+		// JDBC nombre del driver y URL de la BDD
+	}
+	
 }
